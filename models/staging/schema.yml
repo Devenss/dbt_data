@@ -1,0 +1,20 @@
+# models/staging/schema.yml
+
+version: 2
+
+sources:
+  - name: GOOGLE_DRIVE        # This must match the name in source()
+    database: PC_FIVETRAN_DB        # Optional (use if you’re specifying db explicitly)
+    schema: GOOGLE_DRIVE      # The schema where the raw table is stored
+    tables:
+      - name: MOVIES          # The raw table name as seen in Snowflake
+        description: "Raw movie data from Google Drive via Fivetran"
+      - name: RATINGS          # The raw table name as seen in Snowflake
+      - name: TAGS          # The raw table name as seen in Snowflake
+
+  - name: GOOGLE_SHEETS        # This must match the name in source()
+    database: PC_FIVETRAN_DB        # Optional (use if you’re specifying db explicitly)
+    schema: GOOGLE_SHEETS      # The schema where the raw table is stored
+    tables:
+      - name: DEP          # The raw table name as seen in Snowflake
+        description: "Raw movie data from Google Drive via Fivetran"
